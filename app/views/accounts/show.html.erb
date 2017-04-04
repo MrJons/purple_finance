@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% @account.transactions.each do |transaction| %>
+  <%= transaction.tag %>
+<% end %>
+
 <%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>
