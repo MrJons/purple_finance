@@ -7,6 +7,7 @@
         <th>Outlet</th>
         <th>Description</th>
         <th>Amount</th>
+        <th>Offer</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,22 @@
         <td>Mothercare</td>
         <td><%= transaction.tag %></td>
         <td>£9.99</td>
+
+
+        <td>
+                     <div class="panel-heading">
+                       <h4 class="panel-title">
+                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed">Collapsible Group 1</a>
+                       </h4>
+                     </div></td>
+                     <tr><div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                     </div></tr>
+
+
+
       </tr>
       <% end %>
     </tbody>
