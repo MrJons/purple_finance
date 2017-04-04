@@ -13,40 +13,27 @@
     <tbody>
       <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.created_at.to_formatted_s(:short) %></td>
-        <td>Mothercare</td>
-        <td><%= transaction.tag %></td>
-        <td>£9.99</td>
-
-
+        <td><%= transaction.date.to_formatted_s(:short) %></td>
+        <td><%= transaction.outlet %></td>
+        <td><%= transaction.amount %></td>
+      <% @offers.each do |offer| %>
+    <% if offer.tag == transaction.tag %>
         <td>
                      <div class="panel-heading">
                        <h4 class="panel-title">
-                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed">Collapsible Group 1</a>
+                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed"><%= offer.product %></a>
                        </h4>
                      </div></td>
                      <tr><div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                       <div class="panel-body"><%= offer.message %></div>
                      </div></tr>
 
-
+  <% end %>
+  <% end %>
 
       </tr>
       <% end %>
     </tbody>
   </table>
 
-  <br>
-  <h1>Offers!</h1>
-  <br>
-  <% @offers.each do |offer| %>
-    <div class="jumbotron">
-      <h3><%= offer.product %></h3><br>
-      <h5><%= offer.message %></h5>
-      <br>
-      <span><a class="btn btn-primary btn-lg" href="#" role="button">Learn more about this offer</a><span>
-    </div>
-  <% end %>
 </div>
