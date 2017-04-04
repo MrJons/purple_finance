@@ -5,34 +5,38 @@
       <tr>
         <th>Date</th>
         <th>Outlet</th>
-        <th>Description</th>
         <th>Amount</th>
         <th>Offer</th>
       </tr>
     </thead>
     <tbody>
+
       <% @transactions.each do |transaction| %>
+      
       <tr>
         <td><%= transaction.date.to_formatted_s(:short) %></td>
         <td><%= transaction.outlet %></td>
         <td><%= transaction.amount %></td>
-      <% @offers.each do |offer| %>
-    <% if offer.tag == transaction.tag %>
-        <td>
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed offer-name"><%= offer.product %></a>
-                </h4>
-                </div></td>
+          <% @offers.each do |offer| %>
+            <% if offer.tag == transaction.tag %>
+              <td>
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed offer-name"><%= offer.product %></a>
+                  </h4>
+                </div>
+              </td>
               <tr><div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-              <div class="panel-body offer-message"><%= offer.message %></div>
+                <div class="panel-body offer-message"><%= offer.message %></div>
+                <div style="padding-left: 15px"><button type="button" class="btn-xs btn-primary">Learn more...</button></div>
+                <br>
               </div></tr>
+            <% end %>
+          <% end %>
 
-  <% end %>
-  <% end %>
-
-      </tr>
+        </tr>
       <% end %>
+
     </tbody>
   </table>
 
