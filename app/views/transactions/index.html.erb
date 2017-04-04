@@ -1,11 +1,39 @@
-<h1>Transactions</h1>
-
-<% @transactions.each do |transaction| %>
-  <p><%= transaction.outlet %> | £<%= transaction.amount %> | Date: <%= transaction.date %></p>
-  <h2>What we can offer<h2>
-  <% @offers.each do |offer| %>
+<div class="container">
+  <h2>Transactions</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Outlet</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Offer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.date.to_formatted_s(:short) %></td>
+        <td><%= transaction.outlet %></td>
+        <td><%= transaction.amount %></td>
+      <% @offers.each do |offer| %>
     <% if offer.tag == transaction.tag %>
-      <p><%= offer.product %> : <%= offer.message %></p>
-    <% end %>
+        <td>
+                     <div class="panel-heading">
+                       <h4 class="panel-title">
+                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" class="collapsed"><%= offer.product %></a>
+                       </h4>
+                     </div></td>
+                     <tr><div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                       <div class="panel-body"><%= offer.message %></div>
+                     </div></tr>
+
   <% end %>
-<% end %>
+  <% end %>
+
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
