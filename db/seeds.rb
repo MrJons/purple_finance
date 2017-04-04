@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@account = Account.create!(id: 1)
 
-transaction = Transaction.create!(type:'baby', account_id: @account.id)
+transaction = Transaction.create(tag:'baby', account_id: 1)
+offer = Offer.create(product:'savings', message:'Baby?=Savings product')
