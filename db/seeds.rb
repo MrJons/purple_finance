@@ -7,5 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-transaction = Transaction.create(tag:'baby', account_id: 1)
-offer = Offer.create(product:'savings', message:'Baby?=Savings product')
+transaction = Transaction.create(tag:'baby')
+offer = Offer.create(product:'savings', message:'We see you\'ve spent money on baby products.
+Can we interest you with a long term savings product?')

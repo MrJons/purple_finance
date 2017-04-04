@@ -1,0 +1,10 @@
+<h1>Transactions</h1>
+
+<% @transactions.each do |transaction| %>
+  <p><%= transaction.tag %></p>
+<% end %>
+
+<h2>What we can offer<h2>
+<% @offers.each do |offer| %>
+    <p><%= offer.product %> : <%= offer.message %></p>
+<% end %>
