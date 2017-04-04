@@ -10,3 +10,7 @@
 transaction = Transaction.create(tag:'baby')
 offer = Offer.create(product:'savings', message:'We see you\'ve spent money on baby products.
 Can we interest you with a long term savings product?')
+
+20.times do |transaction|
+  Transaction.create(tag: 'baby')
+end
