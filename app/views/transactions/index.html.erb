@@ -1,7 +1,7 @@
 <h1>Transactions</h1>
 
 <% @transactions.each do |transaction| %>
-  <p><%= transaction.tag %></p>
+  <p><%= transaction.outlet %> | £<%= transaction.amount %> | Date: <%= transaction.date %></p>
 <% end %>
 
 <h2>What we can offer<h2>
