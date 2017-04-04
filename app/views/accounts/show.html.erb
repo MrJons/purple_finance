@@ -6,3 +6,8 @@
 
 <%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>
+
+<% @offers.each do |offer| %>
+  <%= offer.product %>
+  <%= offer.message %>
+<% end %>
